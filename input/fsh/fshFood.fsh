@@ -1,12 +1,13 @@
 
 Instance: ex-organization
 InstanceOf: Organization
-Title: "Example Organization holding the data"
+Title: "Example Organization holding the legal emancipation status"
 Description: "The Organization that holds the legal emancipation status. Usually legal counsel or a court."
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * active = true
 * name = "somewhere org"
+* type = http://terminology.hl7.org/CodeSystem/organization-type#govt
 
 
 
@@ -48,7 +49,7 @@ Usage: #example
 * name[=].family = "Schmidt"
 * name[=].given = "Jack"
 * gender = #other
-* birthDate = "1923-07-25"
+* birthDate = "2009-07-25"
 * address.state = "WI"
 * address.country = "USA"
 
@@ -62,6 +63,7 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #current
 * type = http://loinc.org#64292-6 "Release of information consent"
+* date = "2026-08-16T23:11:33+10:00"
 * subject = Reference(Patient/ex-patient)
 * author = Reference(Organization/ex-organization)
 * description = "The captured signed document"
@@ -72,11 +74,46 @@ Usage: #example
 
 
 
+Instance: ex-father
+InstanceOf: RelatedPerson
+Title: "Father - Related Person"
+Description: "Related Father of the Patient authorized by a Consent"
+Usage: #example
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* active = true
+* patient = Reference(Patient/ex-patient)
+* relationship = 	http://terminology.hl7.org/CodeSystem/v3-RoleCode#FTH "father"
+* name[+].use = #official
+* name[=].family = "Schmidt"
+* name[=].given[+] = "John"
+* name[=].given[+] = "Jacob"
+* name[=].given[+] = "Jingleheimer"
+// after all, that is his name too
+* gender = #male
+
+
+Instance: ex-mother
+InstanceOf: RelatedPerson
+Title: "Mother - Related Person"
+Description: "Related Mother of the Patient authorized by a Consent"
+Usage: #example
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* active = true
+* patient = Reference(Patient/ex-patient)
+* relationship = 	http://terminology.hl7.org/CodeSystem/v3-RoleCode#MTH "mother"
+* name[+].use = #official
+* name[=].family = "Schmidt"
+* name[=].given[+] = "Mary"
+* name[=].given[+] = "Ann"
+* gender = #female
+
+
 
 Instance: ex-consent
 InstanceOf: EmancipationConsent
 Title: "Simple Emancipation Consent example"
-Description: "Consent justifying Emancipation"
+Description: "Consent justifying Emancipation. This emancipation is defined for just a year, using provision.period to indicate expiration; this is shown as example of renewal need. 
+With this emancipation the father is allowed access to the Patient's data, but the mother is denied access to the Patient's data."
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #active
@@ -85,12 +122,23 @@ Usage: #example
 * category[relInfo] = http://loinc.org#64292-6 "Release of information consent"
 * category[idscl] = http://terminology.hl7.org/CodeSystem/v3-ActCode#IDSCL
 * patient = Reference(Patient/ex-patient)
-* dateTime = "2022-06-13"
+* dateTime = "2026-08-23" // it is recorded here (Consent instance) a few days after the emancipation was granted (DocumentReference instance)
 * performer = Reference(Patient/ex-patient)
 * organization = Reference(Organization/ex-organization)
 * sourceReference = Reference(DocumentReference/ex-documentreference)
 * policy.uri = "http://example.org/policies/representative.xacml"
-* provision.type = #permit
+* provision.type = #deny // emancipation generally defaults to denying parental access.
+* provision.period.start = "2026-08-16"
+* provision.period.end = "2027-08-16" // in this case the emancipation is only for a year, after which it can be renewed at the legal level.
+* provision.provision[+].type = #permit
+* provision.provision[=].actor[+].role = 	http://terminology.hl7.org/CodeSystem/v3-RoleCode#FTH "father"
+* provision.provision[=].actor[=].reference = Reference(RelatedPerson/ex-father)
+* provision.provision[=].purpose = http://terminology.hl7.org/CodeSystem/v3-ActReason#FAMRQT "family requested"
+* provision.provision[+].type = #permit // a permit placeholder so that another depth can be deny.
+* provision.provision[=].provision[+].type = #deny
+* provision.provision[=].provision[=].actor[+].role = 	http://terminology.hl7.org/CodeSystem/v3-RoleCode#MTH "mother"
+* provision.provision[=].provision[=].actor[=].reference = Reference(RelatedPerson/ex-mother)
+
 
 
 
@@ -112,7 +160,7 @@ Profile: EmancipationConsent
 Parent: Consent
 Title: "Consent profile indicating Emancipation"
 Description: """
-This defines the constraints on a Consent to indicate that a Patient has emancipated.
+This defines the constraints on a Consent to indicate that a Patient has emancipated. The Consent does not cover all aspects of emancipation, but is focused on the access control aspects of emancipation. The Consent is intended to be used in conjunction with a legal emancipation document that is captured in a DocumentReference. The Consent is intended to be used in conjunction with RelatedPerson resources that identify the parents or guardians who are affected by the emancipation.
 
 - status - would indicate active
 - category - would indicate patient consent specifically a delegation of authority
@@ -122,10 +170,12 @@ This defines the constraints on a Consent to indicate that a Patient has emancip
 - organization - would indicate the Organization who presented the privacy policy, and which is going to enforce that privacy policy
 - source - would point at the specific signed consent by the patient
 - policy.uri - would indicate the privacy policy that was presented. Usually, the url to the version specific policy
-- provision.type - permit - given there is no way to deny, this would be fixed at permit.
-- provision.agent.reference - would indicate the RelatedPerson resource
-- provision.agent.role - would indicate this agent is delegated authority
-- provision.purpose - would indicate some set of authorized purposeOfUse
+- provision.type - deny - is the single root provision and establishes the overall direction when required by the legal emancipation instrument and applicable law.
+- provision.provision.type - permit - is an exception to the root denial, such as access expressly retained by law or the legal instrument.
+- provision.provision.provision.type - deny - is an exception to that permit. Each deeper provision alternates the prior provision's direction.
+- provision.provision.actor.reference - would reference the RelatedPerson that identifies the affected parent or guardian.
+- provision.provision.actor.role - would identify the parent's or guardian's relationship or authority.
+- provision.provision.purpose - would indicate the access purposes to which the rule applies.
 """
 * modifierExtension 0..0
 * status = #active
@@ -147,9 +197,8 @@ This defines the constraints on a Consent to indicate that a Patient has emancip
 * organization 1..
 * source[x] only Reference
 * sourceReference ^short = "would point at the Consent paperwork signed by the Patient"
-* provision 1..1
+* provision MS
 * provision.type = #deny
-// TODO: Might like to list those family members that are emancipated from, thus would not be allowed. But the best FHIR Resource for family members is RelatedPerson, which is a positive relationship, not a negated relationship.
 
 
 

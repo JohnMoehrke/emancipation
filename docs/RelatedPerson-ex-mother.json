@@ -1,0 +1,32 @@
+{
+  "resourceType" : "RelatedPerson",
+  "id" : "ex-mother",
+  "meta" : {
+    "security" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+      "code" : "HTEST"
+    }]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: RelatedPerson ex-mother</b></p><a name=\"ex-mother\"> </a><a name=\"hcex-mother\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Security Label: <a href=\"http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActReason.html\">test health data (Details: ActReason code HTEST = 'test health data')</a></p></div><p><b>active</b>: true</p><p><b>patient</b>: <a href=\"Patient-ex-patient.html\">John Schmidt  Other, DoB: 2009-07-25</a></p><p><b>relationship</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-RoleCode MTH}\">mother</span></p><p><b>name</b>: Mary Ann Schmidt (Official)</p><p><b>gender</b>: Female</p></div>"
+  },
+  "active" : true,
+  "patient" : {
+    "reference" : "Patient/ex-patient"
+  },
+  "relationship" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+      "code" : "MTH",
+      "display" : "mother"
+    }]
+  }],
+  "name" : [{
+    "use" : "official",
+    "family" : "Schmidt",
+    "given" : ["Mary",
+    "Ann"]
+  }],
+  "gender" : "female"
+}

@@ -1,0 +1,19 @@
+Source File	Size	loadResources	load	generateSnapshots	load-configure	scan	loadDepInfo	loadInfo	checkR4R4B	generateNarratives	validate	loadLists	checkConformanceResources	checkConformanceResources2	checkConformanceResources3	generateLogicalMaps	validateExpressions	scanForUsageStats	checkURLsUnique	processProvenanceDetails	generate1	generate2	generateLogicals	makeDependencies	generateExampleZip	generateValidationPack	scanProfilesForR5	scanExamplesForR5
+\fsh-generated\resources\ImplementationGuide-johnmoehrke.emancipation.example.json	8124	-	0	0	0	0	0	0	7	40	0	0	0	0	0	0	0	6	0	0	142	94	0	0	0	2	0	3
+fsh-generated/resources/CodeSystem-AuthorizedCodes.json	536	5	0	0	1	0	1	0	0	5	0	0	1	0	0	0	0	0	0	0	22	107	0	0	0	1	0	0
+fsh-generated/resources/Consent-ex-consent.json	2894	3	0	0	0	0	0	0	1	118	0	0	0	0	0	0	0	0	0	0	82	55	0	0	0	0	0	0
+fsh-generated/resources/DocumentReference-ex-documentreference.json	1395	2	0	0	0	0	0	0	0	11	0	0	0	0	0	0	0	0	0	0	22	52	0	0	0	0	0	0
+fsh-generated/resources/Organization-ex-organization.json	441	1	0	0	0	0	0	0	0	4	0	0	0	0	0	0	0	0	0	0	15	31	0	0	0	0	0	0
+fsh-generated/resources/Patient-ex-patient.json	961	1	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	19	40	0	0	0	0	0	0
+fsh-generated/resources/Practitioner-ex-doctor.json	309	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	19	33	0	0	0	0	0	0
+fsh-generated/resources/RelatedPerson-ex-father.json	681	1	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	22	27	0	0	0	0	0	0
+fsh-generated/resources/RelatedPerson-ex-mother.json	657	1	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	39	24	0	0	0	0	0	0
+fsh-generated/resources/StructureDefinition-EmancipationConsent.json	5807	3	0	55	0	0	0	1	0	80	0	0	0	0	0	0	0	1	0	0	489	1176	0	1	0	6	1	0
+fsh-generated/resources/ValueSet-AuthPurposesVS.json	561	2	0	0	0	0	0	0	0	55	0	0	0	0	0	0	0	0	0	0	22	137	0	0	0	1	0	0
+\fsh-generated\includes\fsh-link-references.md	487	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0
+\fsh-generated\includes\menu.xml	1120	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+\input\pagecontent\download.md	737	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+\input\pagecontent\index.md	9316	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+\template\config	0	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+\template\config\_config.yml	140	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+\temp\pages\_includes\artifacts.xml	8029	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	1	0	0	0	0	0	0

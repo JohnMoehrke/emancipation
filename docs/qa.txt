@@ -1,0 +1,31 @@
+JohnMoehrkeEmancipation : Validation Results
+=========================================
+
+err = 0, warn = 0, info = 0
+IG Publisher Version: 2.3.2
+Generated Sun Aug 16 13:45:41 CDT 2026. FHIR version 4.0.1 for johnmoehrke.emancipation.example#0.1.0 (canonical = http://johnmoehrke.github.io/Emancipation)
+ Build Errors : 0 / 0 / 0
+ C:\Users\johnm\git\ME\emancipation\fsh-generated\resources\CodeSystem-AuthorizedCodes : 0 / 0 / 1
+ C:\Users\johnm\git\ME\emancipation\fsh-generated\resources\Consent-ex-consent : 0 / 0 / 1
+ C:\Users\johnm\git\ME\emancipation\fsh-generated\resources\DocumentReference-ex-documentreference : 0 / 0 / 1
+ C:\Users\johnm\git\ME\emancipation\fsh-generated\resources\ImplementationGuide-johnmoehrke.emancipation.example : 0 / 0 / 1
+ C:\Users\johnm\git\ME\emancipation\fsh-generated\resources\Organization-ex-organization : 0 / 0 / 1
+ C:\Users\johnm\git\ME\emancipation\fsh-generated\resources\Patient-ex-patient : 0 / 0 / 1
+ C:\Users\johnm\git\ME\emancipation\fsh-generated\resources\Practitioner-ex-doctor : 0 / 0 / 1
+ C:\Users\johnm\git\ME\emancipation\fsh-generated\resources\RelatedPerson-ex-father : 0 / 0 / 1
+ C:\Users\johnm\git\ME\emancipation\fsh-generated\resources\RelatedPerson-ex-mother : 0 / 0 / 1
+ C:\Users\johnm\git\ME\emancipation\fsh-generated\resources\StructureDefinition-EmancipationConsent : 0 / 0 / 2
+ C:\Users\johnm\git\ME\emancipation\fsh-generated\resources\ValueSet-AuthPurposesVS : 0 / 0 / 1
+</table>
+== n/a ==
+== fsh-generated\resources\CodeSystem-AuthorizedCodes.json ==
+== fsh-generated\resources\Consent-ex-consent.json ==
+== fsh-generated\resources\DocumentReference-ex-documentreference.json ==
+== fsh-generated\resources\ImplementationGuide-johnmoehrke.emancipation.example.json ==
+== fsh-generated\resources\Organization-ex-organization.json ==
+== fsh-generated\resources\Patient-ex-patient.json ==
+== fsh-generated\resources\Practitioner-ex-doctor.json ==
+== fsh-generated\resources\RelatedPerson-ex-father.json ==
+== fsh-generated\resources\RelatedPerson-ex-mother.json ==
+== fsh-generated\resources\StructureDefinition-EmancipationConsent.json ==
+== fsh-generated\resources\ValueSet-AuthPurposesVS.json ==

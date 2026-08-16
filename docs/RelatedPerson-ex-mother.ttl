@@ -1,0 +1,56 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://johnmoehrke.github.io/Emancipation/RelatedPerson/ex-mother> a fhir:RelatedPerson ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ex-mother"] ;
+  fhir:Resource.meta [
+     fhir:Meta.security [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActReason" ] ;
+       fhir:Coding.code [ fhir:value "HTEST" ]
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: RelatedPerson ex-mother</b></p><a name=\"ex-mother\"> </a><a name=\"hcex-mother\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Security Label: <a href=\"http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActReason.html\">test health data (Details: ActReason code HTEST = 'test health data')</a></p></div><p><b>active</b>: true</p><p><b>patient</b>: <a href=\"Patient-ex-patient.html\">John Schmidt  Other, DoB: 2009-07-25</a></p><p><b>relationship</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-RoleCode MTH}\">mother</span></p><p><b>name</b>: Mary Ann Schmidt (Official)</p><p><b>gender</b>: Female</p></div>"
+  ] ;
+  fhir:RelatedPerson.active [ fhir:value "true"^^xsd:boolean] ;
+  fhir:RelatedPerson.patient [
+     fhir:link <http://johnmoehrke.github.io/Emancipation/Patient/ex-patient> ;
+     fhir:Reference.reference [ fhir:value "Patient/ex-patient" ]
+  ] ;
+  fhir:RelatedPerson.relationship [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleCode" ] ;
+       fhir:Coding.code [ fhir:value "MTH" ] ;
+       fhir:Coding.display [ fhir:value "mother" ]
+     ]
+  ] ;
+  fhir:RelatedPerson.name [
+     fhir:index 0 ;
+     fhir:HumanName.use [ fhir:value "official" ] ;
+     fhir:HumanName.family [ fhir:value "Schmidt" ] ;
+     fhir:HumanName.given [
+       fhir:value "Mary" ;
+       fhir:index 0
+     ], [
+       fhir:value "Ann" ;
+       fhir:index 1
+     ]
+  ] ;
+  fhir:RelatedPerson.gender [ fhir:value "female"] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://johnmoehrke.github.io/Emancipation/RelatedPerson/ex-mother.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

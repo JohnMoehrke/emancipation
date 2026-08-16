@@ -1,0 +1,32 @@
+[{
+  "id" : "AuthorizedCodes",
+  "type" : "CodeSystem",
+  "url" : "http://johnmoehrke.github.io/Emancipation/CodeSystem/AuthorizedCodes",
+  "version" : "0.1.0",
+  "name" : "AuthorizedCodes",
+  "oids" : ["1.3.6.1.4.1.66281.17.16.1"]
+},
+{
+  "id" : "johnmoehrke.emancipation.example",
+  "type" : "ImplementationGuide",
+  "url" : "http://johnmoehrke.github.io/Emancipation/ImplementationGuide/johnmoehrke.emancipation.example",
+  "version" : "0.1.0",
+  "name" : "JohnMoehrkeEmancipation",
+  "oids" : ["1.3.6.1.4.1.66281.17"]
+},
+{
+  "id" : "EmancipationConsent",
+  "type" : "StructureDefinition",
+  "url" : "http://johnmoehrke.github.io/Emancipation/StructureDefinition/EmancipationConsent",
+  "version" : "0.1.0",
+  "name" : "EmancipationConsent",
+  "oids" : ["1.3.6.1.4.1.66281.17.42.1"]
+},
+{
+  "id" : "AuthPurposesVS",
+  "type" : "ValueSet",
+  "url" : "http://johnmoehrke.github.io/Emancipation/ValueSet/AuthPurposesVS",
+  "version" : "0.1.0",
+  "name" : "AuthPurposesVS",
+  "oids" : ["1.3.6.1.4.1.66281.17.48.1"]
+}]

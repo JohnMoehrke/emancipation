@@ -1,0 +1,35 @@
+# johnmoehrke.emancipation.example#0.1.0: JohnMoehrke Emancipation
+
+## Pages
+
+* [Emancipation Consent](index.md)
+* [Artifacts Summary](artifacts.md)
+* [Downloads and Analysis](download.md)
+
+## Resources
+
+### CodeSystems
+
+* [Consent type that is indicating Emancipation.](CodeSystem-AuthorizedCodes.md)
+
+### ValueSets
+
+* [Authorization purposes for delegation access valueset](ValueSet-AuthPurposesVS.md)
+
+### Resource Profiles
+
+* [Consent profile indicating Emancipation](StructureDefinition-EmancipationConsent.md)
+
+### ImplementationGuides
+
+* [JohnMoehrke Emancipation](index.md)
+
+### Examples
+
+* [ex-consent (Consent)](Consent-ex-consent.md)
+* [ex-documentreference (DocumentReference)](DocumentReference-ex-documentreference.md)
+* [somewhere org (Organization)](Organization-ex-organization.md)
+* [ex-patient (Patient)](Patient-ex-patient.md)
+* [ex-doctor (Practitioner)](Practitioner-ex-doctor.md)
+* [ex-father (RelatedPerson)](RelatedPerson-ex-father.md)
+* [ex-mother (RelatedPerson)](RelatedPerson-ex-mother.md)

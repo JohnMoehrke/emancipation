@@ -1,0 +1,67 @@
+# Patient example - JohnMoehrke Emancipation v0.1.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Patient example**
+
+## Example Patient: Patient example
+
+Security Label: [test health data (Details: ActReason code HTEST = 'test health data')](http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActReason.html)
+
+John Schmidt Other, DoB: 2009-07-25
+
+-------
+
+| | |
+| :--- | :--- |
+| Contact Detail | WI USA |
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "Patient",
+  "id" : "ex-patient",
+  "meta" : {
+    "security" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+      "code" : "HTEST"
+    }]
+  },
+  "name" : [{
+    "use" : "usual",
+    "family" : "Schmidt",
+    "given" : ["John"]
+  },
+  {
+    "use" : "old",
+    "family" : "Schnidt",
+    "given" : ["John", "Jacob", "Jingle", "Heimer"],
+    "period" : {
+      "end" : "1960"
+    }
+  },
+  {
+    "use" : "official",
+    "family" : "Schmidt",
+    "given" : ["John", "Jacob", "Jingleheimer"],
+    "period" : {
+      "start" : "1960-01-01"
+    }
+  },
+  {
+    "use" : "nickname",
+    "family" : "Schmidt",
+    "given" : ["Jack"]
+  }],
+  "gender" : "other",
+  "birthDate" : "2009-07-25",
+  "address" : [{
+    "state" : "WI",
+    "country" : "USA"
+  }]
+}
+
+```
