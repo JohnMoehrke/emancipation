@@ -22,6 +22,15 @@ Formal publication: [johnmoehrke.github.io/emancipation](https://johnmoehrke.git
 
 CI build: [build.fhir.org/ig/JohnMoehrke/emancipation](http://build.fhir.org/ig/JohnMoehrke/emancipation/branches/main/index.html)
 
+[GitHub source repository](https://github.com/JohnMoehrke/emancipation)
+
+## Related Consent Implementation Guides
+
+- [Consent about AI use](https://github.com/JohnMoehrke/ConsentAboutAI)
+- [Related Person Consent](https://github.com/JohnMoehrke/RelatedPersonConsent)
+- [Consent with Segmentation](https://github.com/JohnMoehrke/ConsentWithSegmentation)
+- [Consent with XACML encoded rules](https://github.com/JohnMoehrke/xacml-consent)
+
 ## Blog Article
 
 ### Modeling Legal Emancipation for Healthcare Access Control with FHIR Consent
